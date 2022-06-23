@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class GstPlayerTextureController {
   static const MethodChannel _channel = MethodChannel('flutter_gstreamer_player');
 
-  late int textureId;
+  int textureId = 0;
   static int _id = 0;
 
   Future<int> initialize(String pipeline) async {
