@@ -29,6 +29,9 @@ flutter:
     platforms:
       linux:
         pluginClass: FlutterGstreamerPlayerPlugin
+      android:
+        package: com.hpdragon1618.flutter_gstreamer_player
+        pluginClass: FlutterGstreamerPlayerPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

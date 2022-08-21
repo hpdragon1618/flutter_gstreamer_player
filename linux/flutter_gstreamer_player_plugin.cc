@@ -61,7 +61,7 @@ static void flutter_gstreamer_player_plugin_handle_method_call(
       gstPlayer->onVideo([texture_registrar = self->texture_registrar,
                        video_outlet_ptr = it->second,
                        video_outlet_private = video_outlet_private]
-                       (uint8_t* frame, int32_t width, int32_t height) -> void {
+                       (uint8_t* frame, uint32_t size, int32_t width, int32_t height, int32_t stride) -> void {
         video_outlet_private->buffer = frame;
         video_outlet_private->video_width = width;
         video_outlet_private->video_height = height;

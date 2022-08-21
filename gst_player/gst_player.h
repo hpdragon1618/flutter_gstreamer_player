@@ -3,6 +3,7 @@
 
 #include <map>
 #include <mutex>
+#include <vector>
 #include <memory>
 #include <string>
 #include <functional>
@@ -10,7 +11,7 @@
 #include <gst/gst.h>
 #include <gst/app/gstappsink.h>
 
-typedef std::function<void(uint8_t*, int32_t, int32_t)> VideoFrameCallback;
+typedef std::function<void(uint8_t*, uint32_t, int32_t, int32_t, int32_t)> VideoFrameCallback;
 
 class GstPlayer {
   public:

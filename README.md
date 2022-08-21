@@ -1,12 +1,20 @@
 # GStreamer Player Plugin
 
-A GStreamer-powered alternative to Flutter's video_player that support Linux.
+A GStreamer-powered alternative to Flutter's video_player that support Linux and Android.
 
 ![](doc/screenshot.png)
 
 ## Installation
 
-Follow GStreamer's [Install on Linux](https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c) instuction
+### Linux
+
+Follow GStreamer's [Install on Linux](https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c) instuction.
+
+### Android
+
+Follow GStreamer's [Install on Android](https://gstreamer.freedesktop.org/documentation/installing/for-android-development.html?gi-language=c) instuction.
+
+This source code has been tested with gstreamer 1.20.1 [prebuild binary](https://gstreamer.freedesktop.org/data/pkg/android/)
 
 ## Getting Started
 

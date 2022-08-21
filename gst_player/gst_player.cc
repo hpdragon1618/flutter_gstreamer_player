@@ -74,8 +74,10 @@ GstFlowReturn GstPlayer::newSample(GstAppSink *sink, gpointer gSelf) {
 
       self->video_callback_(
           (uint8_t*)bufferInfo.data,
+          video_info.size,
           video_info.width,
-          video_info.height);
+          video_info.height,
+          video_info.stride[0]);
 
       gst_buffer_unmap(buffer_, &bufferInfo);
       gst_video_frame_unmap(&vframe);
