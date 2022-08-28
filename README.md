@@ -4,6 +4,8 @@ A GStreamer-powered alternative to Flutter's video_player that support Linux and
 
 ![](doc/screenshot.png)
 
+<a href="https://www.buymeacoffee.com/phongnh36a" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
 ## Installation
 
 ### Linux
@@ -14,7 +16,24 @@ Follow GStreamer's [Install on Linux](https://gstreamer.freedesktop.org/document
 
 Follow GStreamer's [Install on Android](https://gstreamer.freedesktop.org/documentation/installing/for-android-development.html?gi-language=c) instuction.
 
-This source code has been tested with gstreamer 1.20.1 [prebuild binary](https://gstreamer.freedesktop.org/data/pkg/android/)
+In Android, you need to init GStreamer in main activity of your flutter application.
+In your flutter application, edit `MainActivity.kt` or `MainActivity.java` file, depends on your flutter config
+(This file is usually located at `android/app/src/main/<PATH_DEPPEND_ON_YOUR_FLUTTER_APPLICATION>/MainActivity.kt`).
+Import GStreamer module and override `onCreate` of `MainActivity` class to init GStreamer, the end result should looks like bellow.
+
+```
+import org.freedesktop.gstreamer.GStreamer
+
+class MainActivity: FlutterActivity() {
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+
+    GStreamer.init(this);
+  }
+}
+```
+
+This source code has been tested with GStreamer 1.20.1 [prebuild binary](https://gstreamer.freedesktop.org/data/pkg/android/)
 
 ## Getting Started
 
