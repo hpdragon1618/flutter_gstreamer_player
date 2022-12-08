@@ -1,6 +1,6 @@
 # GStreamer Player Plugin
 
-A GStreamer-powered alternative to Flutter's video_player that support Linux and Android.
+A GStreamer-powered alternative to Flutter's video_player that support Linux, iOS and Android.
 
 ![](doc/screenshot.png)
 
@@ -12,9 +12,19 @@ A GStreamer-powered alternative to Flutter's video_player that support Linux and
 
 Follow GStreamer's [Install on Linux](https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c) instuction.
 
+### iOS
+
+Follow GStreamer's [Install on iOS](https://gstreamer.freedesktop.org/documentation/installing/for-ios-development.html?gi-language=c) instuction, step `Prerequisites` and `Download and install GStreamer binaries`.
+
+Link GStreamer framework to `ios` directory for flutter's ios build system.
+
+```
+ln -s /Users/<Your_User_Name>/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework ios/GStreamer.framework
+```
+
 ### Android
 
-Follow GStreamer's [Install on Android](https://gstreamer.freedesktop.org/documentation/installing/for-android-development.html?gi-language=c) instuction.
+Follow GStreamer's [Install on Android](https://gstreamer.freedesktop.org/documentation/installing/for-android-development.html?gi-language=c) instuction, step `Prerequisites` and `Download and install GStreamer binaries`.
 
 In Android, you need to init GStreamer in main activity of your flutter application.
 In your flutter application, edit `MainActivity.kt` or `MainActivity.java` file, depends on your flutter config

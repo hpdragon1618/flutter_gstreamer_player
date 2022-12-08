@@ -65,10 +65,29 @@ class _GstPlayerState extends State<GstPlayer> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: _controller.isInitialized
-        ? Texture(textureId: _controller.textureId)
-        : null,
-    );
+    var currentPlatform = Theme.of(context).platform;
+
+    switch (currentPlatform) {
+      case TargetPlatform.linux:
+      case TargetPlatform.android:
+        return Container(
+          child: _controller.isInitialized
+            ? Texture(textureId: _controller.textureId)
+            : null,
+        );
+        break;
+      case TargetPlatform.iOS:
+        String viewType = _controller.textureId.toString();
+        final Map<String, dynamic> creationParams = <String, dynamic>{};
+        return UiKitView(
+          viewType: viewType,
+          layoutDirection: TextDirection.ltr,
+          creationParams: creationParams,
+          creationParamsCodec: const StandardMessageCodec(),
+        );
+        break;
+      default:
+        throw UnsupportedError('Unsupported platform view');
+    }
   }
 }
